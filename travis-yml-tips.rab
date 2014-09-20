@@ -1,7 +1,5 @@
-= .travis.yml Tips
+= My .travis.yml Tips
 
-# : subtitle
-#    piyo
 : author
    Masafumi Yokoyama
 : institution
@@ -15,82 +13,221 @@
 : theme
    nyankosakana
 
-= self introduction
+= Self Introduction
 
-  * RubyKaja 2013
+    # image
+    # src = my-icon.png
+    # relative_width = 40
+    # align = right
+    # relative_argin_right = -10
 
-= 2.1
+  * @myokoym
+  * ã¿ã‚‡ã“ã‚„ã¾ãƒ¼
+  * Rubyæœ­å¹Œ
+
+= Ruby Kaja 2013
+
+  # image
+  # src = ruby-kaja-2013.jpg
+  # relative_height = 100
+
+= ã‚ˆã‚ã—ããŠé¡˜ã„ã—ã¾ã™ã€‚\n\nm(_ _)m
+
+= Theme
+
+  * Configuration for Travis CI
+
+= .travis.yml
+
+== property
+
+: as_large_as_possible
+   true
+
+= Agenda
+
+  * Getting Started
+  * Choosing Ruby versions
+  * Configuring your build
+
+= Agenda
+
+  * ((*Getting Started*))
+  * Choosing Ruby versions
+  * Configuring your build
+
+= Getting Started
+
+  (1) Edit Rakefile
+  (2) Enable your projects
+  (3) Push .travis.yml
+
+= 1. Edit Rakefile
 
   # coderay ruby
+
+  require "bundler/gem_tasks"
+
+  desc "Run test"
+  task :test do
+    Bundler::GemHelper.install_tasks
+    ruby("test/run-test.rb")
+  end
+
+  task :default => :test
+
+= 2. Enable your projects
+
+    https://travis-ci.org/profile/myokoym
+
+= 3. Push .travis.yml
+
+    % editor .travis.yml
+    % git add .travis.yml
+    % git commit -m "travis: Enable"
+    % git push
+
+= Agenda
+
+  * Getting Started
+  * ((*Choosing Ruby versions*))
+  * Configuring your build
+
+= Ruby 1.9.3
+
+  # coderay yaml
+
+  rvm:
+    - 1.9.3
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+
+= Ruby 2.0.0
+
+  # coderay yaml
+
+  rvm:
+    - 2.0.0
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+
+= Ruby 2.1.x
+
+  # coderay yaml
+
   rvm:
     - 2.1
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+
+= 1.9.3, 2.0.0 and 2.1
+
+  # coderay yaml
+
+  rvm:
+    - 1.9.3
+    - 2.0.0
+    - 2.1
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
 
 = ruby-head
 
-  # coderay ruby
+  # coderay yaml
+
   rvm:
     - ruby-head
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+
+= ruby-head
+
+  # coderay bash
+
+  $ ruby --version
+  ruby 2.2.0dev
+  (2014-09-20 trunk 47652)
+  [x86_64-linux]
+
+= 2.2.0dev!
+
+== property
+
+: as_large_as_possible
+   true
 
 = JRuby
 
-  # coderay ruby
+  # coderay yaml
+
   rvm:
     - jruby-19mode
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
 
 = Rubinius
 
-  # coderay ruby
+  # coderay yaml
+
   rvm:
     - rbx-2
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+
+= Agenda
+
+  * Getting Started
+  * Choosing Ruby versions
+  * ((*Configuring your build*))
 
 = allow_failures
 
-  # coderay ruby
+  # coderay yaml
+
   matrix:
     allow_failures:
       - rvm: ruby-head
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
 
 = fast_finish
 
-  # coderay ruby
+  # coderay yaml
+
   matrix:
     allow_failures:
       - rvm: ruby-head
     fast_finish: true
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
 
-= before_script
+= before_install
 
-  # coderay ruby
-  before_script:
-    - ./travis-before-script.sh
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
-  @@@@@@@@@@ 
+  # coderay yaml
+
+  before_install:
+    - sudo apt-get update -qq
+    - sudo apt-get install -qq -y ...
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 
 
 = GUI
 
-  # coderay ruby
+  # coderay yaml
+
   env:
     global:
       - DISPLAY=":99.0"
@@ -98,3 +235,12 @@
     - sh -e /etc/init.d/xvfb start
   after_script:
     - sh -e /ext/init.d/xvfb stop
+
+= References
+
+  * Travis CI: Building a Ruby Project
+    * (('note:http://docs.travis-ci.com/user/languages/ruby/'))
+  * Travis CI: Configuring your build
+    * (('note:http://docs.travis-ci.com/user/build-configuration/'))
+  * ruby-gnome2/.travis.yml
+    * (('note:https://github.com/ruby-gnome2/ruby-gnome2/blob/master/.travis.yml'))

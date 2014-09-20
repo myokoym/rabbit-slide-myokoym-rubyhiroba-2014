@@ -1,4 +1,4 @@
-= .travis.yml Tips
+= My .travis.yml Tips
 
 == For author
 
