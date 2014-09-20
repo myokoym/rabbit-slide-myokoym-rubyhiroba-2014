@@ -3,6 +3,8 @@ id: rubyhiroba-2014
 base_name: travis-yml-tips
 tags:
   - rabbit
+  - ruby
+  - travisci
 presentation_date: 2014/09/21
 version: 2014.9.21.1
 licenses:
