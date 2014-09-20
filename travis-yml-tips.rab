@@ -1,0 +1,100 @@
+= .travis.yml Tips
+
+# : subtitle
+#    piyo
+: author
+   Masafumi Yokoyama
+: institution
+   Ruby-GNOME2 Project Team
+: content-source
+   RubyHiroba 2014
+: date
+   2014/09/21
+: allotted-time
+   5m
+: theme
+   nyankosakana
+
+= self introduction
+
+  * RubyKaja 2013
+
+= 2.1
+
+  # coderay ruby
+  rvm:
+    - 2.1
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+
+= ruby-head
+
+  # coderay ruby
+  rvm:
+    - ruby-head
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+
+= JRuby
+
+  # coderay ruby
+  rvm:
+    - jruby-19mode
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+
+= Rubinius
+
+  # coderay ruby
+  rvm:
+    - rbx-2
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+
+= allow_failures
+
+  # coderay ruby
+  matrix:
+    allow_failures:
+      - rvm: ruby-head
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+
+= fast_finish
+
+  # coderay ruby
+  matrix:
+    allow_failures:
+      - rvm: ruby-head
+    fast_finish: true
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+
+= before_script
+
+  # coderay ruby
+  before_script:
+    - ./travis-before-script.sh
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+  　　　　　　　　　　 
+
+= GUI
+
+  # coderay ruby
+  env:
+    global:
+      - DISPLAY=":99.0"
+  before_script:
+    - sh -e /etc/init.d/xvfb start
+  after_script:
+    - sh -e /ext/init.d/xvfb stop

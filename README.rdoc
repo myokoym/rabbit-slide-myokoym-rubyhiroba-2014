@@ -1,0 +1,21 @@
+= .travis.yml Tips
+
+== For author
+
+=== Show
+
+  rake
+
+=== Publish
+
+  rake publish
+
+== For viewers
+
+=== Install
+
+  gem install rabbit-slide-myokoym-rubyhiroba-2014
+
+=== Show
+
+  rabbit rabbit-slide-myokoym-rubyhiroba-2014.gem
