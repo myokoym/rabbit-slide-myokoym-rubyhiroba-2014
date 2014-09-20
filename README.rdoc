@@ -1,5 +1,7 @@
 = My .travis.yml Tips
 
+Configuration for Travis CI
+
 == For author
 
 === Show
