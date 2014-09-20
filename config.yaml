@@ -4,7 +4,7 @@ base_name: travis-yml-tips
 tags:
   - rabbit
 presentation_date: 2014/09/21
-version: 2014.9.21.0
+version: 2014.9.21.1
 licenses:
   - CC BY 4.0
 slideshare_id: 
